@@ -32,7 +32,7 @@
                 </Grid.RowDefinitions>
 
                 <Border Grid.Row="0" BorderBrush="White" BorderThickness="5">
-                    <Image Source=".\logo.png" />
+                    <Image Source="logo.png" />
                 </Border>
                 <Border Grid.Row="1" BorderBrush="LightGray" BorderThickness="0 1 0 1">
                     <Viewbox>

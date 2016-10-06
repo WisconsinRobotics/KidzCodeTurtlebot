@@ -23,10 +23,10 @@
                 <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
 
-            <!-- Define left column to hold WR logo & Information-->
-            <Grid Grid.Column="0">
+            <!-- Define left column to hold WR logo & Information--> <!-- Changed it to be placed in the right column -->
+            <Grid Grid.Column="4">
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="5*"/>
+                    <RowDefinition Height="6*"/>
                     <RowDefinition Height="1.5*"/>
                     <RowDefinition Height="20*"/>
                 </Grid.RowDefinitions>
@@ -41,7 +41,7 @@
                 </Border>
                 <StackPanel Grid.Row="2">
                     <Viewbox>
-                        <TextBlock VerticalAlignment="Top" TextWrapping="Wrap">
+                        <TextBlock HorizontalAlignment="Right" VerticalAlignment="Bottom" TextWrapping="Wrap">
                         Founded in 2002, Wisconsin Robotics proudly represents<LineBreak/>
                         the students of the University of Wisconsin-Madison.<LineBreak/>
                         <LineBreak/>
@@ -61,6 +61,10 @@
                     <Border BorderBrush="LightGray" BorderThickness="0 0 0 1"/>
                     <Image Source=".\wr_site_qr.png"/>
                 </StackPanel>
+                
+            </Grid>
+            <Grid Grid.Column="0">
+                
             </Grid>
 
             <Border Grid.Column="1" BorderBrush="LightGray" BorderThickness="1"/>

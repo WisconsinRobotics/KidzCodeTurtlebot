@@ -20,9 +20,43 @@ namespace KidzCodeTurtlebot
     /// </summary>
     public partial class MainWindow : Window
     {
+
+        private List<string> cmdTextBox;
+
         public MainWindow()
         {
             InitializeComponent();
+
+            cmdTextBox = new List<string>();
+            cmdTextBox.Add("Turtlebot Drive Commands:\n");
+            driveCmdTextBox.Text = String.Join(" ", cmdTextBox.ToArray());
+        }
+
+        private void straightButton_Click(object sender, RoutedEventArgs e)
+        {
+            cmdTextBox.Add("Straight\n");
+            driveCmdTextBox.Text = String.Join(" ", cmdTextBox.ToArray());
+        }
+
+        private void rightButton_Click(object sender, RoutedEventArgs e)
+        {
+            cmdTextBox.Add("Right\n");
+            driveCmdTextBox.Text = String.Join(" ", cmdTextBox.ToArray());
+        }
+
+        private void leftButton_Click(object sender, RoutedEventArgs e)
+        {
+            cmdTextBox.Add("Left\n");
+            driveCmdTextBox.Text = String.Join(" ", cmdTextBox.ToArray());
+        }
+
+        private void deleteButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (cmdTextBox.Count > 1)
+            {
+                cmdTextBox.RemoveAt(cmdTextBox.Count - 1);
+                driveCmdTextBox.Text = String.Join(" ", cmdTextBox.ToArray());
+            }
         }
     }
 }

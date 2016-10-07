@@ -12,7 +12,7 @@
         Border tags are used for margins and padding. I don't know if it's the "correct" way to do it,
         but it certainly works very well.
      -->
-    <Border BorderBrush="LightGray" BorderThickness="0 1 0 0">
+  
         <Grid>
             <!-- Column defintions-->
             <Grid.ColumnDefinitions>
@@ -23,25 +23,26 @@
                 <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
 
-            <!-- Define left column to hold WR logo & Information--> <!-- Changed it to be placed in the right column -->
-            <Grid Grid.Column="4">
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="6*"/>
-                    <RowDefinition Height="1.5*"/>
-                    <RowDefinition Height="20*"/>
-                </Grid.RowDefinitions>
+            <!-- Define right column to hold WR logo & Information-->
+        <Grid Grid.Column="4">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="7*"/>
+                <RowDefinition Height="2*"/>
+                <RowDefinition Height="15*"/>
+                <RowDefinition Height="20*"/>
+            </Grid.RowDefinitions>
 
-                <Border Grid.Row="0" BorderBrush="White" BorderThickness="5">
-                    <Image Source="logo.png" />
-                </Border>
-                <Border Grid.Row="1" BorderBrush="LightGray" BorderThickness="0 1 0 1">
-                    <Viewbox>
-                        <Label TextElement.FontWeight="Bold" HorizontalAlignment="Center">About Us</Label>
-                    </Viewbox>
-                </Border>
-                <StackPanel Grid.Row="2">
-                    <Viewbox>
-                        <TextBlock HorizontalAlignment="Right" VerticalAlignment="Bottom" TextWrapping="Wrap">
+            <Border Grid.Row="0" BorderBrush="Gray" BorderThickness="1 0 0 0">
+                <Image Source="logo.png" />
+            </Border>
+            <Border Grid.Row="1" BorderBrush="Gray" BorderThickness="1 1 0 1">
+                <Viewbox>
+                    <Label TextElement.FontWeight="Bold" HorizontalAlignment="Center">About Us</Label>
+                </Viewbox>
+            </Border>
+            <Border Grid.Row="2" BorderBrush="Gray" BorderThickness="1 0 0 0">
+                <Viewbox>
+                    <TextBlock HorizontalAlignment="Right" VerticalAlignment="Bottom" TextWrapping="Wrap">
                         Founded in 2002, Wisconsin Robotics proudly represents<LineBreak/>
                         the students of the University of Wisconsin-Madison.<LineBreak/>
                         <LineBreak/>
@@ -56,19 +57,20 @@
                         <LineBreak/>
                         <LineBreak/>
                         To learn more, visit us at wisconsinrobotics.org or follow: <LineBreak/>
-                        </TextBlock>
-                    </Viewbox>
-                    <Border BorderBrush="LightGray" BorderThickness="0 0 0 1"/>
-                    <Image Source=".\wr_site_qr.png"/>
-                </StackPanel>
-                
-            </Grid>
+                    </TextBlock>
+                </Viewbox>
+            </Border>
+            <Border Grid.Row ="3" BorderBrush="Gray" BorderThickness="1 0 0 0">
+                <Image Source=".\wr_site_qr.png"/>
+            </Border>
+
+        </Grid>
             <Grid Grid.Column="0">
                 
             </Grid>
 
-            <Border Grid.Column="1" BorderBrush="LightGray" BorderThickness="1"/>
+            
 
         </Grid>
-    </Border>
+   
 </Window>

@@ -22,6 +22,14 @@ namespace KidzCodeTurtlebot
     {
 
         private List<string> cmdTextBox;
+        private List<Drive> cmds;
+
+        enum Drive
+        {
+            STRAIGHT = 0,
+            RIGHT = 1,
+            LEFT = 2,
+        }
 
         public MainWindow()
         {
@@ -35,18 +43,21 @@ namespace KidzCodeTurtlebot
         private void straightButton_Click(object sender, RoutedEventArgs e)
         {
             cmdTextBox.Add("Straight\n");
+            cmds.Add(Drive.STRAIGHT);
             driveCmdTextBox.Text = String.Join(" ", cmdTextBox.ToArray());
         }
 
         private void rightButton_Click(object sender, RoutedEventArgs e)
         {
             cmdTextBox.Add("Right\n");
+            cmds.Add(Drive.RIGHT);
             driveCmdTextBox.Text = String.Join(" ", cmdTextBox.ToArray());
         }
 
         private void leftButton_Click(object sender, RoutedEventArgs e)
         {
             cmdTextBox.Add("Left\n");
+            cmds.Add(Drive.LEFT);
             driveCmdTextBox.Text = String.Join(" ", cmdTextBox.ToArray());
         }
 

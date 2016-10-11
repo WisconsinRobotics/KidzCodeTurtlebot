@@ -21,14 +21,14 @@ namespace KidzCodeTurtlebot
     public partial class MainWindow : Window
     {
 
+        private List<Drive> payload;
         private List<string> cmdTextBox;
-        private List<Drive> cmds;
 
         enum Drive
         {
-            STRAIGHT = 0,
-            RIGHT = 1,
-            LEFT = 2,
+            STRAIGHT = (byte) 0,
+            RIGHT = (byte) 1,
+            LEFT = (byte) 2,
         }
 
         public MainWindow()
@@ -36,29 +36,50 @@ namespace KidzCodeTurtlebot
             InitializeComponent();
 
             cmdTextBox = new List<string>();
+            payload = new List<Drive>();
+
             cmdTextBox.Add("Turtlebot Drive Commands:\n");
             driveCmdTextBox.Text = String.Join(" ", cmdTextBox.ToArray());
+
+            straight_png.Visibility = Visibility.Hidden;
+            right_png.Visibility = Visibility.Hidden;
+            left_png.Visibility = Visibility.Hidden;
         }
 
         private void straightButton_Click(object sender, RoutedEventArgs e)
         {
+            payload.Add(Drive.STRAIGHT);
+
             cmdTextBox.Add("Straight\n");
-            cmds.Add(Drive.STRAIGHT);
             driveCmdTextBox.Text = String.Join(" ", cmdTextBox.ToArray());
+
+            straight_png.Visibility = Visibility.Visible;
+            right_png.Visibility = Visibility.Hidden;
+            left_png.Visibility = Visibility.Hidden;
         }
 
         private void rightButton_Click(object sender, RoutedEventArgs e)
         {
+            payload.Add(Drive.RIGHT);
+
             cmdTextBox.Add("Right\n");
-            cmds.Add(Drive.RIGHT);
             driveCmdTextBox.Text = String.Join(" ", cmdTextBox.ToArray());
+
+            straight_png.Visibility = Visibility.Hidden;
+            right_png.Visibility = Visibility.Visible;
+            left_png.Visibility = Visibility.Hidden;
         }
 
         private void leftButton_Click(object sender, RoutedEventArgs e)
         {
+            payload.Add(Drive.LEFT);
+
             cmdTextBox.Add("Left\n");
-            cmds.Add(Drive.LEFT);
             driveCmdTextBox.Text = String.Join(" ", cmdTextBox.ToArray());
+
+            straight_png.Visibility = Visibility.Hidden;
+            right_png.Visibility = Visibility.Hidden;
+            left_png.Visibility = Visibility.Visible;
         }
 
         private void deleteButton_Click(object sender, RoutedEventArgs e)
@@ -68,6 +89,41 @@ namespace KidzCodeTurtlebot
                 cmdTextBox.RemoveAt(cmdTextBox.Count - 1);
                 driveCmdTextBox.Text = String.Join(" ", cmdTextBox.ToArray());
             }
+
+            if (payload.Count > 1)
+            {
+                payload.RemoveAt(payload.Count - 1);
+
+                switch (payload.ElementAt(payload.Count - 1))
+                {
+                    case Drive.STRAIGHT:
+                        straight_png.Visibility = Visibility.Visible;
+                        right_png.Visibility = Visibility.Hidden;
+                        left_png.Visibility = Visibility.Hidden;
+                        break;
+                    case Drive.RIGHT:
+                        straight_png.Visibility = Visibility.Hidden;
+                        right_png.Visibility = Visibility.Visible;
+                        left_png.Visibility = Visibility.Hidden;
+                        break;
+                    case Drive.LEFT:
+                        straight_png.Visibility = Visibility.Hidden;
+                        right_png.Visibility = Visibility.Hidden;
+                        left_png.Visibility = Visibility.Visible;
+                        break;
+                }
+            }
+            else
+            {
+                if(payload.Count == 1)
+                {
+                    payload.RemoveAt(payload.Count - 1);
+                }
+                straight_png.Visibility = Visibility.Hidden;
+                right_png.Visibility = Visibility.Hidden;
+                left_png.Visibility = Visibility.Hidden;
+            }
         }
+
     }
 }

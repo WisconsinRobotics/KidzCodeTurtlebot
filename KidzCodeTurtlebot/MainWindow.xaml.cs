@@ -24,13 +24,6 @@ namespace KidzCodeTurtlebot
         private List<Drive> payload;
         private List<string> cmdTextBox;
 
-        enum Drive
-        {
-            STRAIGHT = (byte) 0,
-            RIGHT = (byte) 1,
-            LEFT = (byte) 2,
-        }
-
         public MainWindow()
         {
             InitializeComponent();
@@ -125,5 +118,44 @@ namespace KidzCodeTurtlebot
             }
         }
 
+        private void executeButton_Click(object sender, RoutedEventArgs e)
+        {
+            bool valid = validateSelection();
+
+            driveCmdTextBox.Background = valid ? Brushes.Green : Brushes.Red;
+        }
+
+
+        private bool validateSelection()
+        {
+            List<Drive> path1 = Path.getPath1().Data;
+
+            if (path1.Count != this.payload.Count)
+            {
+                return false;
+            }
+
+            for (int i = 0; i < path1.Count; i++)
+            {
+                if (!path1[i].Equals(this.payload[i]))
+                {
+                    return false;
+                }
+            }
+
+            return true;
+        }
     }
+
+
+    /// <summary>
+    /// Enum to represent drive directions for Turtlebot
+    /// </summary>
+    public enum Drive
+    {
+        STRAIGHT = (byte)0,
+        RIGHT = (byte)1,
+        LEFT = (byte)2,
+    }
+
 }

@@ -55,6 +55,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Path.cs" />
     <Compile Include="LeftBlock.xaml.cs">
       <DependentUpon>LeftBlock.xaml</DependentUpon>
     </Compile>

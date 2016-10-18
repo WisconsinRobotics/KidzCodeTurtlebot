@@ -66,10 +66,11 @@
                 <Button x:Name="straightButton" Content="Straight" HorizontalAlignment="Left" Margin="80,60,0,0" VerticalAlignment="Top" Width="75" Click="straightButton_Click"/>
                 <Button x:Name="rightButton" Content="Right" HorizontalAlignment="Left" Margin="80,120,0,0" VerticalAlignment="Top" Width="75" Click="rightButton_Click"/>
                 <Button x:Name="leftButton" Content="Left" HorizontalAlignment="Left" Margin="80,180,0,0" VerticalAlignment="Top" Width="75" Click="leftButton_Click"/>
-                <Button x:Name="deleteButton" Content="Delete" HorizontalAlignment="Left" Margin="80,240,0,0" VerticalAlignment="Top" Width="75" Click="deleteButton_Click"/>
-                <Image x:Name="straight_png" Margin="70,393,58,54" Source="straight.png" Stretch="Fill"/>
-                <Image x:Name="right_png" Margin="70,393,58,54" Source="right.png" Stretch="Fill"/>
-                <Image x:Name="left_png" Margin="70,393,58,54" Source="left.png" Stretch="Fill"/>
+                <Button x:Name="deleteButton" Content="Delete" HorizontalAlignment="Left" Margin="80,280,0,0" VerticalAlignment="Top" Width="75" Click="deleteButton_Click"/>
+				<Button x:Name="executeButton" Content="Drive!" HorizontalAlignment="Left" Margin="80,340,0,0" VerticalAlignment="Top" Width="75" Click="executeButton_Click"/>
+				<Image x:Name="straight_png" Margin="80,393,45,54" Source="straight.png" Stretch="Fill"/>
+                <Image x:Name="right_png" Margin="80,393,45,54" Source="right.png" Stretch="Fill"/>
+                <Image x:Name="left_png" Margin="80,393,45,54" Source="left.png" Stretch="Fill"/>
 
 
             </Grid>

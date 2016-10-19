@@ -55,6 +55,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Course.xaml.cs">
+      <DependentUpon>Course.xaml</DependentUpon>
+    </Compile>
     <Compile Include="LeftBlock.xaml.cs">
       <DependentUpon>LeftBlock.xaml</DependentUpon>
     </Compile>
@@ -64,6 +67,10 @@
     <Compile Include="StraightBlock.xaml.cs">
       <DependentUpon>StraightBlock.xaml</DependentUpon>
     </Compile>
+    <Page Include="Course.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="LeftBlock.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

@@ -5,54 +5,10 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:KidzCodeTurtlebot"
              mc:Ignorable="d" 
-             d:DesignHeight="300" d:DesignWidth="300">
-    <Grid Margin="-100,100,100,100">
-        <local:LeftBlock Margin="555,-1246,-494,979"/>
-        <local:LeftBlock Margin="553,-709,-492,442" RenderTransformOrigin="0.5,0.5">
-            <local:LeftBlock.RenderTransform>
-                <TransformGroup>
-                    <ScaleTransform/>
-                    <SkewTransform/>
-                    <RotateTransform Angle="90"/>
-                    <TranslateTransform/>
-                </TransformGroup>
-            </local:LeftBlock.RenderTransform>
-        </local:LeftBlock>
-        <local:LeftBlock Margin="315,-713,-254,446" RenderTransformOrigin="0.5,0.5">
-            <local:LeftBlock.RenderTransform>
-                <TransformGroup>
-                    <ScaleTransform/>
-                    <SkewTransform/>
-                    <RotateTransform Angle="180
-                                     "/>
-                    <TranslateTransform/>
-                </TransformGroup>
-            </local:LeftBlock.RenderTransform>
-        </local:LeftBlock>
-        <local:LeftBlock Margin="-283,-1249,344,982" RenderTransformOrigin="0.5,0.5">
-            <local:LeftBlock.RenderTransform>
-                <TransformGroup>
-                    <ScaleTransform/>
-                    <SkewTransform/>
-                    <RotateTransform Angle="-90
-                                     "/>
-                    <TranslateTransform/>
-                </TransformGroup>
-            </local:LeftBlock.RenderTransform>
-        </local:LeftBlock>
-        <local:LeftBlock Margin="253,-344,-174,115"/>
-        <local:RightBlock Margin="192,-950,-248,683" RenderTransformOrigin="0.5,0.5">
-            <local:RightBlock.RenderTransform>
-                <TransformGroup>
-                    <ScaleTransform/>
-                    <SkewTransform/>
-                    <RotateTransform Angle="90"/>
-                    <TranslateTransform/>
-                </TransformGroup>
-            </local:RightBlock.RenderTransform>
-        </local:RightBlock>
-        <local:RightBlock Margin="-47,-944,19,716"/>
-        <local:RightBlock Margin="-43,-369,23,139" RenderTransformOrigin="0.5,0.5">
+             d:DesignHeight="1600" d:DesignWidth="1100">
+    <Grid>
+        <local:LeftBlock Margin="884,-92,-80,1240"/>
+        <local:RightBlock Margin="324,692,0,456" RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Left" Width="376">
             <local:RightBlock.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -62,38 +18,73 @@
                 </TransformGroup>
             </local:RightBlock.RenderTransform>
         </local:RightBlock>
-        <local:StraightBlock Margin="255,-1309,-194,1042" RenderTransformOrigin="0.5,0.5">
-            <local:StraightBlock.RenderTransform>
+        <local:StraightBlock Margin="-20,504,824,644"/>
+        <local:StraightBlock Margin="-20,802,824,346"/>
+        <local:RightBlock Margin="-20,-92,731,1260"/>
+        <local:RightBlock Margin="444,196,224,952" RenderTransformOrigin="0.5,0.5">
+            <local:RightBlock.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
                     <SkewTransform/>
                     <RotateTransform Angle="90"/>
                     <TranslateTransform/>
                 </TransformGroup>
-            </local:StraightBlock.RenderTransform>
-        </local:StraightBlock>
-        <local:StraightBlock Margin="-344,-344,405,77"/>
-        <local:StraightBlock Margin="-48,-1309,109,1042" RenderTransformOrigin="0.5,0.5">
-            <local:StraightBlock.RenderTransform>
+            </local:RightBlock.RenderTransform>
+        </local:RightBlock>
+        <local:LeftBlock Margin="588,356,216,792" RenderTransformOrigin="0.5,0.5">
+            <local:LeftBlock.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="180"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </local:LeftBlock.RenderTransform>
+        </local:LeftBlock>
+        <local:LeftBlock Margin="812,428,-8,720" RenderTransformOrigin="0.5,0.5">
+            <local:LeftBlock.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
                     <SkewTransform/>
                     <RotateTransform Angle="90"/>
                     <TranslateTransform/>
                 </TransformGroup>
+            </local:LeftBlock.RenderTransform>
+        </local:LeftBlock>
+        <local:StraightBlock Margin="586,1104,218,44"/>
+        <local:LeftBlock Margin="586,806,218,342"/>
+        <local:StraightBlock Margin="660,-168,144,1316" RenderTransformOrigin="0.5,0.5">
+            <local:StraightBlock.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-90"/>
+                    <TranslateTransform/>
+                </TransformGroup>
             </local:StraightBlock.RenderTransform>
         </local:StraightBlock>
-        <local:StraightBlock Margin="-47,-643,108,376"/>
-        <local:StraightBlock Margin="-347,-640,408,373"/>
-        <local:StraightBlock Margin="-347,-941,408,674"/>
-        <local:StraightBlock Margin="555,-947,-494,680"/>
-        <local:StraightBlock Margin="253,-42,-192,-225"/>
-        <TextBox x:Name="TextboxStart" HorizontalAlignment="Left" Height="68" TextWrapping="Wrap" Text="Start" VerticalAlignment="Top" Width="112" Margin="353,270,-165,-238" FontSize="50"/>
-        <TextBox x:Name="TextBoxEnd" HorizontalAlignment="Left" Height="68" TextWrapping="Wrap" Text="End" VerticalAlignment="Top" Width="93" FontSize="50" Margin="-239,-32,0,0"/>
-        <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Margin="120,23,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top"/>
-
-
-
-
+        <local:StraightBlock Margin="356,-168,448,1316" RenderTransformOrigin="0.5,0.5">
+            <local:StraightBlock.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-90"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </local:StraightBlock.RenderTransform>
+        </local:StraightBlock>
+        <local:LeftBlock Margin="364,132,440,1016" RenderTransformOrigin="0.5,0.5">
+            <local:LeftBlock.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-90"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </local:LeftBlock.RenderTransform>
+        </local:LeftBlock>
+        <local:StraightBlock Margin="884,205,-80,943"/>
+        <local:StraightBlock Margin="285,504,519,644"/>
+        <local:StraightBlock Margin="-20,205,824,943"/>
     </Grid>
 </UserControl>

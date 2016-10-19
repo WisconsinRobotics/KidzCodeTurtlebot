@@ -58,6 +58,7 @@
     <Compile Include="Course.xaml.cs">
       <DependentUpon>Course.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Path.cs" />
     <Compile Include="LeftBlock.xaml.cs">
       <DependentUpon>LeftBlock.xaml</DependentUpon>
     </Compile>

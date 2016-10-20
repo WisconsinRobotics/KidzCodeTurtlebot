@@ -29,6 +29,7 @@ namespace KidzCodeTurtlebot
             data.Add(Drive.STRAIGHT);
             data.Add(Drive.LEFT);
             data.Add(Drive.RIGHT);
+            data.Add(Drive.STRAIGHT);
             data.Add(Drive.RIGHT);
             data.Add(Drive.RIGHT);
             data.Add(Drive.LEFT);
@@ -38,6 +39,7 @@ namespace KidzCodeTurtlebot
             data.Add(Drive.STRAIGHT);
             data.Add(Drive.STRAIGHT);
             data.Add(Drive.LEFT);
+            data.Add(Drive.STRAIGHT);
             data.Add(Drive.STRAIGHT);
             data.Add(Drive.STRAIGHT);
 

@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
+using System.Net.Sockets;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -20,9 +22,14 @@ namespace KidzCodeTurtlebot
     /// </summary>
     public partial class MainWindow : Window
     {
+        private const int TURTLEBOT_SUBSYSTEM_PORT = 40000;
+
 
         private List<Drive> payload;
         private List<string> cmdTextBox;
+        private UdpClient socket;
+
+
 
         public MainWindow()
         {
@@ -37,10 +44,14 @@ namespace KidzCodeTurtlebot
             straight_png.Visibility = Visibility.Hidden;
             right_png.Visibility = Visibility.Hidden;
             left_png.Visibility = Visibility.Hidden;
+
+            socket = new UdpClient(TURTLEBOT_SUBSYSTEM_PORT);
         }
 
         private void straightButton_Click(object sender, RoutedEventArgs e)
         {
+            driveCmdTextBox.Background = Brushes.White;
+
             payload.Add(Drive.STRAIGHT);
 
             cmdTextBox.Add("Straight\n");
@@ -53,6 +64,8 @@ namespace KidzCodeTurtlebot
 
         private void rightButton_Click(object sender, RoutedEventArgs e)
         {
+            driveCmdTextBox.Background = Brushes.White;
+
             payload.Add(Drive.RIGHT);
 
             cmdTextBox.Add("Right\n");
@@ -65,6 +78,8 @@ namespace KidzCodeTurtlebot
 
         private void leftButton_Click(object sender, RoutedEventArgs e)
         {
+            driveCmdTextBox.Background = Brushes.White;
+
             payload.Add(Drive.LEFT);
 
             cmdTextBox.Add("Left\n");
@@ -77,6 +92,8 @@ namespace KidzCodeTurtlebot
 
         private void deleteButton_Click(object sender, RoutedEventArgs e)
         {
+            driveCmdTextBox.Background = Brushes.White;
+
             if (cmdTextBox.Count > 1)
             {
                 cmdTextBox.RemoveAt(cmdTextBox.Count - 1);
@@ -120,13 +137,18 @@ namespace KidzCodeTurtlebot
 
         private void executeButton_Click(object sender, RoutedEventArgs e)
         {
-            bool valid = validateSelection();
+            bool valid = ValidateSelection();
 
             driveCmdTextBox.Background = valid ? Brushes.Green : Brushes.Red;
+
+            if (valid)
+            {
+                SendSelection(this.payload);
+            }
         }
 
 
-        private bool validateSelection()
+        private bool ValidateSelection()
         {
             List<Drive> path1 = Path.getPath1().Data;
 
@@ -144,6 +166,32 @@ namespace KidzCodeTurtlebot
             }
 
             return true;
+        }
+
+        private byte[] SendSelection(List<Drive> selection)
+        {
+            byte[] packet = DataPacker(selection);
+            socket.Send(packet, packet.Length, new IPEndPoint(IPAddress.Loopback, TURTLEBOT_SUBSYSTEM_PORT));
+
+            return packet;
+        }
+
+
+        private byte[] DataPacker(List<Drive> selection)
+        {
+            List<byte> packed = new List<byte>();
+
+            packed.Add(0xBA);
+            packed.Add((byte)selection.Count);
+
+            foreach (Drive drive in selection)
+            {
+                packed.Add((byte)drive);
+            }
+
+            packed.Add(0xBE);
+
+            return packed.ToArray();
         }
     }
 

@@ -74,8 +74,10 @@
                 <Image x:Name="left_png" Margin="80,393,45,54" Source="left.png" Stretch="Fill"/>
             </Grid>
             <Grid Grid.Column="2">
-                <local:Course x:Name="course" Height="200" Width="200" VerticalAlignment="Bottom" Panel.ZIndex="1"/>
+                <local:Course x:Name="course" Height="200" Width="200" VerticalAlignment="Bottom" Panel.ZIndex="1" Margin="10,0,18,0"/>
                 <TextBox x:Name="driveCmdTextBox" HorizontalAlignment="Left" Height="510" Margin="0,10,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="228" Panel.ZIndex="0"/>
+                <TextBox x:Name="start" HorizontalAlignment="Left" Height="21" Margin="128,489,0,0" TextWrapping="Wrap" Text="Start" VerticalAlignment="Top" Width="32" Panel.ZIndex="2" BorderBrush="White"/>
+                <TextBox x:Name="finish" HorizontalAlignment="Left" Height="23" Margin="16,460,0,0" TextWrapping="Wrap" Text="Finish" VerticalAlignment="Top" Width="38"  Panel.ZIndex="2" BorderBrush="White"/>
             </Grid>
         </Grid>
     </Viewbox>
